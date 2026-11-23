@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Ninja - Shadow of Darkness"
+id = "SLUS-00435"
+players = 1
+exe = "disc/slus_004.35"
+disc = "disc/Ninja - Shadow of Darkness (USA).cue"
+discs = ["disc/Ninja - Shadow of Darkness (USA).cue"]
+disc_serials = ["SLUS-00435"]
+load_address = "0x80010000"
+entry_pc = "0x80012308"
+text_size = "0x00050800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Ninja - Shadow of Darkness (USA) (Track 1).bin"
+cue_name = "Ninja - Shadow of Darkness (USA).cue"
+boot_exe = "slus_004.35"
+known_sizes = [118030416]
+known_md5 = [
+  "613c47353cf4fefaacd37dc5b1011a6a",
+]
+known_sha1 = [
+  "92c81c0ae0f220b84eebca4eedabd4d42ceca37a",
+]
+known_crc32 = [
+  "6dfbc78b",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Ninja - Shadow of Darkness Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 44
+required_disc_fp = "2067d621592712b6cbb37bfc0676a9e24da3d1f45063023535de2b281eac58ea"

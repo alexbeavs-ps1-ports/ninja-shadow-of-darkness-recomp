@@ -1,0 +1,13 @@
+{
+  "$schema": "https://recomp.fyi/schema/v1.json",
+  "game": "Ninja - Shadow of Darkness",
+  "system": "PS1",
+  "type": "recomp",
+  "toolchain": "psxrecomp",
+  "status": "exploring",
+  "project": "ninja-shadow-of-darkness-recomp",
+  "original": {
+    "region": "USA",
+    "serial": "SLUS-00435"
+  }
+}
